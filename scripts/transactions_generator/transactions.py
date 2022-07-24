@@ -1,7 +1,5 @@
 from config import *
 from utils import *
-import numpy as np
-import scipy.stats as stats
 import csv
 
 
@@ -12,16 +10,8 @@ users_to_services = []
 # Gerenting Requests
 print("~~~ Requests ~~~~")
 for event in events:
-
-    lower, upper = 0, 500
-    mu, sigma = 150, 5
-    # Defining the random variable
-    X = stats.truncnorm((lower - mu) / sigma, (upper - mu) / sigma, loc=mu, scale=sigma)
-    # Drawing a sample
-    occurances = int(X.rvs(1))
-
+    occurances = truncatedNormal(0,500,150,5)
     print('Ocuurances of',event['name'],': ',occurances)
-
     for i in range(occurances):
         user = np.round(np.random.uniform(0,number_of_users-1))
         users_to_requests.append({
@@ -35,12 +25,10 @@ for event in events:
 print('\n\n\n')
 print("~~~ Services ~~~~")
 for event in events:
-
-    occurances = int(np.round(np.random.pareto(1)))*100
-
+    occurances = pareto(0,1)
     print('Ocuurances of',event['name'],': ',occurances)
     for i in range(occurances):
-        user = np.round(np.random.uniform(0,number_of_users-1))
+        user = uniform(0,number_of_users-1)
         users_to_services.append({
             'user': user,
             'event': event
@@ -48,9 +36,7 @@ for event in events:
 
 
 
-
 # Maching requests to services
-
 print('\n\n\n')
 print('~~~Transactions~~~')
 header = ['from', 'to', 'amount','name', 'label']
@@ -58,8 +44,6 @@ with open('../transactions.csv', 'w', encoding='UTF8', newline='') as f:
     writer = csv.writer(f)
     writer.writerow(header)
     transactions = []
-
-
     for request in users_to_requests:
         for service in users_to_services:
             if request['event']['name'] == service['event']['name']:

@@ -1,6 +1,29 @@
 import numpy as np
+import scipy.stats as stats
+
+
+def uniform(lower,upper):
+    return np.round(np.random.uniform(lower,upper))
+
+
+def pareto(min,a):
+    """Returns a sample from a Pareto distribution"""
+    return int(np.round(np.random.pareto(1)))+min
+
+
+def truncatedNormal(lower,upper,mu,sigma):
+    """Returns a sample from a trancated normal distribution"""
+
+    lower, upper = 0, 500
+    mu, sigma = 150, 5
+    # Defining the random variable
+    X = stats.truncnorm((lower - mu) / sigma, (upper - mu) / sigma, loc=mu, scale=sigma)
+    # Drawing a sample
+    return int(X.rvs(1))
 
 def gini(arr):
+    """Calculated Gini Index"""
+
     ## first sort
     sorted_arr = arr.copy()
     sorted_arr.sort()
@@ -11,6 +34,8 @@ def gini(arr):
     return coef_*weighted_sum/(sorted_arr.sum()) - const_
 
 def lorenz(arr):
+    """Draws lorenz curve"""
+
     ## first sort
     sorted_arr = arr.copy()
     sorted_arr.sort()
