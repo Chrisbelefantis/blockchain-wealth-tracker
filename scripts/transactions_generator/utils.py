@@ -6,9 +6,9 @@ def uniform(lower,upper):
     return np.round(np.random.uniform(lower,upper))
 
 
-def pareto(min,a):
+def pareto(a):
     """Returns a sample from a Pareto distribution"""
-    return int(np.round(np.random.pareto(1)))+min
+    return int(np.round(np.random.pareto(1)))
 
 
 def truncatedNormal(lower,upper,mu,sigma):

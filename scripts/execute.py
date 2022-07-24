@@ -1,4 +1,5 @@
 from brownie import *
+import numpy
 import web3
 import csv
 
@@ -13,12 +14,18 @@ def main():
 
     
     # Destributing CityCoin to all Accounts
-    for account in accounts[1:]:
-        cityCoin.claimToken(100,{'from':account})
+    with open('/home/chrisbele/blockchain/scripts/initial_wealth.csv', 'r') as file:
+        reader = csv.reader(file)
+        next(reader, None)
+        for row in reader:
+            user = int(float(row[0]))
+            amount = int(float(row[1]))
+            cityCoin.claimToken(amount,{'from':accounts[user]})
 
 
     printAccounts(cityCoin)
 
+    # Executing the transactions
     with open('/home/chrisbele/blockchain/scripts/transactions.csv', 'r') as file:
         reader = csv.reader(file)
         next(reader, None)
@@ -38,12 +45,6 @@ def main():
 
     printAccounts(cityCoin)
 
-    
-
-
-
-    # dir(cityCoin)
-    # print(cityCoin)
     
 
 

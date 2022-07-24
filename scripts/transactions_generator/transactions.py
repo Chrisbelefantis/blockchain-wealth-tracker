@@ -3,6 +3,20 @@ from utils import *
 import csv
 
 
+print('~~~Distribute Wealth~~~')
+header = ['user', 'balance']
+with open('../initial_wealth.csv', 'w', encoding='UTF8', newline='') as f:
+    writer = csv.writer(f)
+    writer.writerow(header)
+    for i in range(number_of_users):
+        if use_pareto_for_wealth_destribution:
+            balance = 100 + pareto(1)*100
+        else:
+            balance = 100
+        print('User ',i,' with balance ',balance)    
+        writer.writerow([i,balance])
+
+
 users_to_requests = []
 users_to_services = []
 
@@ -20,12 +34,11 @@ for event in events:
         })
 
 
-
 # Gerenting services
 print('\n\n\n')
 print("~~~ Services ~~~~")
 for event in events:
-    occurances = pareto(0,1)
+    occurances = pareto(1)
     print('Ocuurances of',event['name'],': ',occurances)
     for i in range(occurances):
         user = uniform(0,number_of_users-1)
