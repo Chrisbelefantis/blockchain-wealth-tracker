@@ -1,14 +1,362 @@
 from,to,amount,name,label
-88.0,81.0,10,Environmental
-20.0,24.0,5,Environmental
-54.0,31.0,5,Environmental
-42.0,18.0,5,Environmental
-72.0,92.0,10,Governemnt
-98.0,18.0,10,Smart cities
-11.0,77.0,10,Smart cities
-53.0,59.0,10,Smart cities
-79.0,45.0,10,Smart cities
-32.0,46.0,10,Smart cities
-14.0,67.0,10,Smart cities
-23.0,4.0,10,Smart cities
-37.0,13.0,10,Smart cities
+36.0,26.0,10,Environmental
+95.0,16.0,10,Environmental
+31.0,64.0,10,Environmental
+58.0,1.0,10,Environmental
+96.0,38.0,10,Environmental
+90.0,28.0,10,Environmental
+40.0,35.0,10,Environmental
+59.0,57.0,10,Environmental
+24.0,46.0,10,Environmental
+93.0,42.0,10,Environmental
+1.0,5.0,10,Environmental
+74.0,41.0,10,Environmental
+40.0,21.0,10,Environmental
+24.0,74.0,10,Environmental
+20.0,2.0,10,Environmental
+88.0,63.0,10,Environmental
+30.0,48.0,10,Environmental
+10.0,8.0,10,Environmental
+68.0,29.0,10,Environmental
+6.0,0.0,10,Environmental
+77.0,32.0,10,Environmental
+17.0,96.0,10,Environmental
+93.0,84.0,10,Environmental
+75.0,46.0,10,Environmental
+65.0,0.0,10,Environmental
+1.0,86.0,10,Environmental
+2.0,36.0,10,Environmental
+61.0,62.0,10,Environmental
+21.0,70.0,10,Environmental
+54.0,47.0,10,Environmental
+51.0,42.0,10,Environmental
+92.0,14.0,10,Environmental
+85.0,32.0,10,Environmental
+66.0,19.0,10,Environmental
+77.0,28.0,10,Environmental
+86.0,98.0,10,Environmental
+19.0,20.0,10,Environmental
+10.0,33.0,10,Environmental
+50.0,22.0,10,Environmental
+11.0,62.0,10,Environmental
+92.0,93.0,10,Environmental
+23.0,51.0,10,Environmental
+54.0,29.0,10,Environmental
+3.0,68.0,10,Environmental
+26.0,40.0,10,Environmental
+83.0,58.0,10,Environmental
+46.0,75.0,10,Environmental
+37.0,93.0,10,Environmental
+3.0,44.0,10,Environmental
+53.0,51.0,10,Environmental
+49.0,62.0,10,Environmental
+23.0,28.0,10,Environmental
+97.0,67.0,10,Environmental
+50.0,20.0,10,Environmental
+19.0,31.0,10,Environmental
+16.0,11.0,10,Environmental
+98.0,28.0,10,Environmental
+11.0,21.0,10,Environmental
+51.0,14.0,10,Environmental
+68.0,14.0,10,Environmental
+37.0,57.0,10,Environmental
+2.0,12.0,10,Environmental
+44.0,40.0,10,Environmental
+41.0,72.0,10,Environmental
+8.0,21.0,10,Environmental
+33.0,4.0,10,Environmental
+61.0,66.0,10,Environmental
+97.0,31.0,10,Environmental
+70.0,28.0,10,Environmental
+6.0,30.0,10,Environmental
+42.0,36.0,10,Environmental
+32.0,3.0,10,Environmental
+84.0,47.0,10,Environmental
+61.0,78.0,10,Environmental
+51.0,8.0,5,Environmental
+40.0,13.0,5,Environmental
+48.0,90.0,5,Environmental
+23.0,21.0,5,Environmental
+94.0,62.0,5,Environmental
+20.0,41.0,5,Environmental
+64.0,28.0,5,Environmental
+87.0,33.0,5,Environmental
+34.0,54.0,5,Environmental
+23.0,45.0,5,Environmental
+26.0,68.0,5,Environmental
+7.0,27.0,5,Environmental
+81.0,48.0,5,Environmental
+48.0,6.0,5,Environmental
+44.0,47.0,5,Environmental
+9.0,38.0,5,Environmental
+35.0,4.0,5,Environmental
+58.0,62.0,5,Environmental
+33.0,28.0,5,Environmental
+45.0,7.0,5,Environmental
+93.0,26.0,5,Environmental
+15.0,83.0,5,Environmental
+18.0,84.0,5,Environmental
+84.0,62.0,5,Environmental
+59.0,44.0,5,Environmental
+8.0,52.0,5,Environmental
+86.0,52.0,5,Environmental
+42.0,42.0,5,Environmental
+44.0,72.0,5,Environmental
+54.0,70.0,5,Environmental
+20.0,54.0,5,Environmental
+61.0,40.0,5,Environmental
+39.0,7.0,5,Environmental
+16.0,67.0,5,Environmental
+82.0,91.0,5,Environmental
+82.0,51.0,5,Environmental
+66.0,56.0,5,Environmental
+51.0,16.0,5,Environmental
+89.0,31.0,5,Environmental
+89.0,32.0,5,Environmental
+11.0,35.0,5,Environmental
+9.0,51.0,5,Environmental
+97.0,39.0,5,Environmental
+84.0,8.0,5,Environmental
+26.0,34.0,5,Environmental
+78.0,7.0,5,Environmental
+39.0,97.0,5,Environmental
+94.0,44.0,5,Environmental
+88.0,26.0,5,Environmental
+64.0,53.0,5,Environmental
+33.0,99.0,5,Environmental
+2.0,9.0,5,Environmental
+64.0,7.0,5,Environmental
+17.0,99.0,5,Environmental
+7.0,6.0,5,Environmental
+23.0,11.0,5,Environmental
+11.0,73.0,5,Environmental
+58.0,78.0,5,Environmental
+4.0,97.0,5,Environmental
+43.0,14.0,5,Environmental
+38.0,65.0,5,Environmental
+72.0,79.0,5,Environmental
+60.0,10.0,5,Environmental
+25.0,91.0,5,Environmental
+48.0,28.0,5,Environmental
+78.0,58.0,5,Environmental
+68.0,70.0,5,Environmental
+24.0,83.0,5,Environmental
+96.0,41.0,5,Environmental
+71.0,51.0,5,Environmental
+10.0,22.0,5,Environmental
+58.0,94.0,5,Environmental
+43.0,80.0,5,Environmental
+60.0,27.0,10,Governemnt
+73.0,69.0,10,Governemnt
+58.0,42.0,10,Governemnt
+57.0,39.0,10,Governemnt
+42.0,7.0,10,Governemnt
+43.0,46.0,10,Governemnt
+76.0,47.0,10,Governemnt
+55.0,11.0,10,Governemnt
+2.0,85.0,10,Governemnt
+59.0,65.0,10,Governemnt
+89.0,63.0,10,Governemnt
+3.0,65.0,10,Governemnt
+43.0,19.0,10,Governemnt
+13.0,82.0,10,Governemnt
+55.0,50.0,10,Governemnt
+40.0,5.0,10,Governemnt
+78.0,50.0,10,Governemnt
+36.0,31.0,10,Governemnt
+19.0,52.0,10,Governemnt
+0.0,50.0,10,Governemnt
+51.0,87.0,10,Governemnt
+86.0,58.0,10,Governemnt
+35.0,39.0,10,Governemnt
+51.0,39.0,10,Governemnt
+61.0,14.0,10,Governemnt
+18.0,45.0,10,Governemnt
+51.0,68.0,10,Governemnt
+31.0,45.0,10,Governemnt
+69.0,79.0,10,Governemnt
+70.0,16.0,10,Governemnt
+77.0,85.0,10,Governemnt
+87.0,28.0,10,Governemnt
+79.0,61.0,10,Governemnt
+40.0,75.0,10,Governemnt
+50.0,89.0,10,Governemnt
+82.0,80.0,10,Governemnt
+88.0,48.0,10,Governemnt
+61.0,19.0,10,Governemnt
+41.0,35.0,10,Governemnt
+88.0,63.0,10,Governemnt
+63.0,5.0,10,Governemnt
+93.0,25.0,10,Governemnt
+82.0,97.0,10,Governemnt
+35.0,56.0,10,Governemnt
+42.0,13.0,10,Governemnt
+69.0,71.0,10,Governemnt
+13.0,32.0,10,Governemnt
+29.0,52.0,10,Governemnt
+91.0,45.0,10,Governemnt
+23.0,92.0,10,Governemnt
+8.0,60.0,10,Governemnt
+68.0,47.0,10,Governemnt
+47.0,84.0,10,Governemnt
+13.0,57.0,10,Governemnt
+3.0,32.0,10,Governemnt
+23.0,29.0,10,Governemnt
+69.0,16.0,10,Governemnt
+61.0,64.0,10,Governemnt
+94.0,89.0,10,Governemnt
+99.0,67.0,10,Governemnt
+45.0,10.0,10,Governemnt
+74.0,40.0,10,Governemnt
+28.0,85.0,10,Governemnt
+67.0,93.0,10,Governemnt
+8.0,97.0,10,Governemnt
+64.0,65.0,10,Governemnt
+79.0,18.0,10,Governemnt
+55.0,63.0,10,Governemnt
+62.0,23.0,10,Governemnt
+46.0,26.0,10,Governemnt
+8.0,57.0,10,Governemnt
+8.0,15.0,10,Governemnt
+20.0,60.0,10,Governemnt
+32.0,87.0,4,Governemnt
+74.0,65.0,4,Governemnt
+62.0,55.0,4,Governemnt
+5.0,99.0,4,Governemnt
+65.0,30.0,4,Governemnt
+41.0,1.0,4,Governemnt
+49.0,8.0,4,Governemnt
+75.0,92.0,4,Governemnt
+78.0,70.0,4,Governemnt
+49.0,69.0,4,Governemnt
+85.0,90.0,4,Governemnt
+96.0,26.0,4,Governemnt
+19.0,55.0,4,Governemnt
+14.0,29.0,4,Governemnt
+92.0,87.0,4,Governemnt
+62.0,6.0,4,Governemnt
+93.0,86.0,4,Governemnt
+6.0,62.0,4,Governemnt
+50.0,54.0,4,Governemnt
+84.0,20.0,4,Governemnt
+23.0,5.0,4,Governemnt
+77.0,1.0,4,Governemnt
+52.0,50.0,4,Governemnt
+69.0,55.0,4,Governemnt
+41.0,98.0,4,Governemnt
+35.0,36.0,4,Governemnt
+89.0,14.0,4,Governemnt
+66.0,27.0,4,Governemnt
+21.0,77.0,4,Governemnt
+88.0,11.0,4,Governemnt
+57.0,81.0,4,Governemnt
+43.0,91.0,4,Governemnt
+42.0,18.0,4,Governemnt
+70.0,48.0,4,Governemnt
+58.0,72.0,4,Governemnt
+11.0,22.0,4,Governemnt
+13.0,98.0,4,Governemnt
+6.0,17.0,4,Governemnt
+52.0,68.0,4,Governemnt
+96.0,98.0,4,Governemnt
+53.0,47.0,4,Governemnt
+4.0,66.0,4,Governemnt
+0.0,72.0,4,Governemnt
+33.0,5.0,4,Governemnt
+50.0,16.0,4,Governemnt
+61.0,11.0,4,Governemnt
+54.0,30.0,4,Governemnt
+7.0,85.0,4,Governemnt
+61.0,22.0,4,Governemnt
+61.0,9.0,4,Governemnt
+21.0,20.0,4,Governemnt
+59.0,7.0,4,Governemnt
+51.0,14.0,4,Governemnt
+93.0,66.0,4,Governemnt
+81.0,1.0,4,Governemnt
+91.0,61.0,4,Governemnt
+68.0,29.0,4,Governemnt
+97.0,74.0,4,Governemnt
+26.0,89.0,4,Governemnt
+89.0,97.0,4,Governemnt
+17.0,27.0,4,Governemnt
+28.0,91.0,4,Governemnt
+82.0,79.0,4,Governemnt
+93.0,72.0,4,Governemnt
+31.0,27.0,4,Governemnt
+55.0,76.0,4,Governemnt
+32.0,4.0,4,Governemnt
+11.0,76.0,4,Governemnt
+93.0,99.0,4,Governemnt
+63.0,83.0,4,Governemnt
+27.0,34.0,4,Governemnt
+32.0,45.0,4,Governemnt
+89.0,84.0,10,Smart cities
+28.0,80.0,10,Smart cities
+2.0,15.0,10,Smart cities
+52.0,87.0,10,Smart cities
+39.0,48.0,10,Smart cities
+64.0,19.0,10,Smart cities
+18.0,25.0,10,Smart cities
+97.0,11.0,10,Smart cities
+30.0,86.0,10,Smart cities
+18.0,80.0,10,Smart cities
+11.0,42.0,10,Smart cities
+81.0,18.0,10,Smart cities
+31.0,3.0,10,Smart cities
+38.0,83.0,10,Smart cities
+70.0,21.0,10,Smart cities
+98.0,30.0,10,Smart cities
+94.0,26.0,10,Smart cities
+29.0,65.0,10,Smart cities
+66.0,21.0,10,Smart cities
+92.0,1.0,10,Smart cities
+35.0,58.0,10,Smart cities
+83.0,45.0,10,Smart cities
+19.0,19.0,10,Smart cities
+68.0,50.0,10,Smart cities
+95.0,66.0,10,Smart cities
+90.0,79.0,10,Smart cities
+9.0,87.0,10,Smart cities
+97.0,69.0,10,Smart cities
+10.0,79.0,10,Smart cities
+88.0,38.0,10,Smart cities
+2.0,21.0,10,Smart cities
+47.0,31.0,10,Smart cities
+8.0,61.0,10,Smart cities
+64.0,28.0,10,Smart cities
+68.0,94.0,10,Smart cities
+12.0,78.0,10,Smart cities
+6.0,11.0,10,Smart cities
+81.0,23.0,10,Smart cities
+85.0,92.0,10,Smart cities
+55.0,60.0,10,Smart cities
+99.0,60.0,10,Smart cities
+77.0,24.0,10,Smart cities
+31.0,72.0,10,Smart cities
+37.0,52.0,10,Smart cities
+75.0,26.0,10,Smart cities
+91.0,72.0,10,Smart cities
+30.0,12.0,10,Smart cities
+46.0,2.0,10,Smart cities
+49.0,24.0,10,Smart cities
+0.0,22.0,10,Smart cities
+40.0,6.0,10,Smart cities
+57.0,72.0,10,Smart cities
+26.0,27.0,10,Smart cities
+18.0,76.0,10,Smart cities
+24.0,54.0,10,Smart cities
+16.0,63.0,10,Smart cities
+67.0,19.0,10,Smart cities
+7.0,62.0,10,Smart cities
+72.0,13.0,10,Smart cities
+23.0,46.0,10,Smart cities
+37.0,9.0,10,Smart cities
+32.0,77.0,10,Smart cities
+23.0,81.0,10,Smart cities
+36.0,81.0,10,Smart cities
+88.0,98.0,10,Smart cities
+15.0,27.0,10,Smart cities
+87.0,52.0,10,Smart cities
+42.0,10.0,10,Smart cities
+14.0,61.0,10,Smart cities

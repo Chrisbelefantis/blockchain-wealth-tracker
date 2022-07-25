@@ -1,5 +1,5 @@
 number_of_users = 100
-use_pareto_for_wealth_destribution = True
+use_pareto_for_wealth_destribution = False
 
 events = [
     {

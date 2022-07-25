@@ -9,9 +9,6 @@ contract CityCoin is ERC20, AddressStorage {
     address public tokenHolder;
 
     constructor() ERC20("CityCoin", "CTY") {
-        //Creating 1 Billion City Coins and assign them to the account
-        //which is deploying the contract.
-        _mint(msg.sender, 1000000000);
         tokenHolder = msg.sender;
     }
 

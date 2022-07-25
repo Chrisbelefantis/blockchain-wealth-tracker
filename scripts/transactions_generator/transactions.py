@@ -38,7 +38,7 @@ for event in events:
 print('\n\n\n')
 print("~~~ Services ~~~~")
 for event in events:
-    occurances = pareto(1)
+    occurances = pareto(1)*100
     print('Ocuurances of',event['name'],': ',occurances)
     for i in range(occurances):
         user = uniform(0,number_of_users-1)
