@@ -14,8 +14,8 @@ def pareto(a):
 def truncatedNormal(lower,upper,mu,sigma):
     """Returns a sample from a trancated normal distribution"""
 
-    lower, upper = 0, 500
-    mu, sigma = 150, 5
+    lower, upper = lower, upper
+    mu, sigma = mu, sigma
     # Defining the random variable
     X = stats.truncnorm((lower - mu) / sigma, (upper - mu) / sigma, loc=mu, scale=sigma)
     # Drawing a sample

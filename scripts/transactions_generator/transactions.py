@@ -5,7 +5,7 @@ import csv
 
 print('~~~Distribute Wealth~~~')
 header = ['user', 'balance']
-with open('../initial_wealth.csv', 'w', encoding='UTF8', newline='') as f:
+with open('/home/chrisbele/blockchain/scripts/initial_wealth.csv', 'w', encoding='UTF8', newline='') as f:
     writer = csv.writer(f)
     writer.writerow(header)
     for i in range(number_of_users):
@@ -24,10 +24,10 @@ users_to_services = []
 # Gerenting Requests
 print("~~~ Requests ~~~~")
 for event in events:
-    occurances = truncatedNormal(0,500,150,5)
+    occurances = truncatedNormal(0,500,250,50)
     print('Ocuurances of',event['name'],': ',occurances)
     for i in range(occurances):
-        user = np.round(np.random.uniform(0,number_of_users-1))
+        user = uniform(0,number_of_users-1)
         users_to_requests.append({
             'user': user,
             'event': event
@@ -38,10 +38,12 @@ for event in events:
 print('\n\n\n')
 print("~~~ Services ~~~~")
 for event in events:
-    occurances = pareto(1)*100
+    #occurances = pareto(1)*100
+    occurances = truncatedNormal(0,500,250,50)
     print('Ocuurances of',event['name'],': ',occurances)
     for i in range(occurances):
-        user = uniform(0,number_of_users-1)
+        #user = uniform(0,number_of_users-1)
+        user = truncatedNormal(0,99,50,10)
         users_to_services.append({
             'user': user,
             'event': event
@@ -53,7 +55,7 @@ for event in events:
 print('\n\n\n')
 print('~~~Transactions~~~')
 header = ['from', 'to', 'amount','name', 'label']
-with open('../transactions.csv', 'w', encoding='UTF8', newline='') as f:
+with open('/home/chrisbele/blockchain/scripts/transactions.csv', 'w', encoding='UTF8', newline='') as f:
     writer = csv.writer(f)
     writer.writerow(header)
     transactions = []
