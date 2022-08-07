@@ -31,8 +31,10 @@ def gini(arr):
     weighted_sum = sum([(i+1)*yi for i, yi in enumerate(sorted_arr)])
     return coef_*weighted_sum/(sorted_arr.sum()) - const_
 
-def lorenz(initial,final):
+def drawLorenz(initial,final):
     """Prints the lorenz curves of the initial and the final wealth distribution """
+
+    path = f"/home/chrisbele/blockchain/diagrams/{datetime.now().strftime('%d-%m-%Y_%H-%M-%S')}_lurenz.png"
 
     initial_sorted_arr = initial.copy()
     initial_sorted_arr.sort()
@@ -51,7 +53,16 @@ def lorenz(initial,final):
     plt.plot([0,1], [0,1],label="Even Wealth distribution")
 
     plt.legend()
-    plt.savefig(f"/home/chrisbele/blockchain/diagrams/{datetime.now().strftime('%d-%m-%Y_%H-%M-%S')}_lurenz.png")
+    plt.savefig(path)
+    print('Lorenz curve diagram saved at: ',path)
+
+def drawDistributions(initial,final):
+    path = f"/home/chrisbele/blockchain/diagrams/{datetime.now().strftime('%d-%m-%Y_%H-%M-%S')}_distributions.png"
+    plt.hist([initial,final],bins=20,color=['r','g'])
+    plt.legend(labels=['Initial wealth distribution','Final wealth distribution'])
+    plt.savefig(path)
+    print('Distributions diagram saved at: ',path)
+
 
 def nakamotoIndex(balances):
 
@@ -110,7 +121,7 @@ def main():
                 print(e.__class__," occured.")
         
 
-
+ 
     #printAccounts(cityCoin)
     balances_end = getAccountBalances(cityCoin)
 
@@ -134,18 +145,8 @@ def main():
     print("Skewness:", round(stats.skew(balances_end),4))
     print("kurtosis:", round(stats.kurtosis(balances_end),4))
 
-
-    #Printing Lorenz Curves
-    lorenz(balances_start,balances_end)
-
-
-    #Bar graph with the distribution
-    # index = np.arange(len(accounts))
-    # bar_width = 0.35
-    # fig, ax = plt.subplots()
-    # initial = ax.bar(index, balances_start, bar_width,
-    #             label="Initial Balance")
-    # final = ax.bar(index+bar_width, balances_end,
-    #              bar_width, label="Final Balance")
-    # ax.legend()
-    # plt.savefig("balances_bar.png")
+    print('\n\n')
+    #Drawing Lorenz Curves
+    drawLorenz(balances_start,balances_end)
+    #Drawing distributions 
+    drawDistributions(balances_start,balances_end)
