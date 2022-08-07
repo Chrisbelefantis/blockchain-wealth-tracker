@@ -1,5 +1,6 @@
 from brownie import *
 from scipy import stats
+from datetime import datetime
 import numpy as np
 import matplotlib.pyplot as plt
 import csv
@@ -50,7 +51,24 @@ def lorenz(initial,final):
     plt.plot([0,1], [0,1],label="Even Wealth distribution")
 
     plt.legend()
-    plt.savefig("lorenz_curve.png")
+    plt.savefig(f"/home/chrisbele/blockchain/diagrams/{datetime.now().strftime('%d-%m-%Y_%H-%M-%S')}_lurenz.png")
+
+def nakamotoIndex(balances):
+
+    balances.sort()
+    balances = balances[::-1] #Reverting the sort so it starts with larger num
+    half_balance = round(sum(balances)/2)
+
+    total = 0
+    nakamoto_index=1
+    for balance in balances:
+        total+=balance
+        if total>half_balance:
+            break
+        else:
+            nakamoto_index+=1
+
+    return nakamoto_index
 
 
 
@@ -58,7 +76,7 @@ def main():
 
     #Deploying Token
     cityCoin = CityCoin.deploy({"from":accounts[0]})
-
+    num_of_accounts = len(accounts)
     
     #Destributing CityCoin to all Accounts
     with open('/home/chrisbele/blockchain/scripts/initial_wealth.csv', 'r') as file:
@@ -70,7 +88,7 @@ def main():
             cityCoin.claimToken(amount,{'from':accounts[user]})
 
 
-    printAccounts(cityCoin)
+    #printAccounts(cityCoin)
     balances_start = getAccountBalances(cityCoin)
 
     #Executing the transactions
@@ -93,13 +111,14 @@ def main():
         
 
 
-    printAccounts(cityCoin)
+    #printAccounts(cityCoin)
     balances_end = getAccountBalances(cityCoin)
 
     #Printing Statistics
     print('\n\n')
     print("Initial Wealth distribution:")
     print("Gini index: ",round(gini(balances_start),4))
+    print("Nakamoto index: ",nakamotoIndex(balances_start),"/",num_of_accounts)
     print("Mean: ",round(np.mean(balances_start),4))
     print("Standard Deviation: ",round(np.std(balances_start),4))
     print("Skewness:", round(stats.skew(balances_start),4))
@@ -109,6 +128,7 @@ def main():
     print('\n\n')
     print("Final Wealth distribution:")
     print("Gini index: ",round(gini(balances_end),4))
+    print("Nakamoto index: ",nakamotoIndex(balances_end),"/",num_of_accounts)
     print("Mean: ",round(np.mean(balances_end),4))
     print("Standard Deviation: ",round(np.std(balances_end),4))
     print("Skewness:", round(stats.skew(balances_end),4))
