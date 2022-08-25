@@ -5,17 +5,13 @@ import csv
 
 print('~~~Distribute Wealth~~~')
 header = ['user', 'balance']
-with open('/home/chrisbele/blockchain/scripts/initial_wealth.csv', 'w', encoding='UTF8', newline='') as f:
+with open(path+'/scripts/initial_wealth.csv', 'w', encoding='UTF8', newline='') as f:
     writer = csv.writer(f)
     writer.writerow(header)
     for i in range(number_of_users):
-        if use_pareto_for_wealth_destribution:
-            balance = 100 + pareto(1)*100
-        else:
-            balance = 100
+        balance = distributionController(wealth_distribution)
         print('User ',i,' with balance ',balance)    
         writer.writerow([i,balance])
-
 
 users_to_requests = []
 users_to_services = []
@@ -24,10 +20,10 @@ users_to_services = []
 # Gerenting Requests
 print("~~~ Requests ~~~~")
 for event in events:
-    occurances = truncatedNormal(0,500,250,50)
+    occurances = distributionController(occurances_of_requests_distribution)
     print('Ocuurances of',event['name'],': ',occurances)
     for i in range(occurances):
-        user = uniform(0,number_of_users-1)
+        user = distributionController(requests_to_users_distribution)  
         users_to_requests.append({
             'user': user,
             'event': event
@@ -39,11 +35,11 @@ print('\n\n\n')
 print("~~~ Services ~~~~")
 for event in events:
     #occurances = pareto(1)*100
-    occurances = truncatedNormal(0,500,250,50)
+    occurances = distributionController(occurances_of_services_distribution)
     print('Ocuurances of',event['name'],': ',occurances)
     for i in range(occurances):
         #user = uniform(0,number_of_users-1)
-        user = truncatedNormal(0,99,50,10)
+        user = distributionController(services_to_users_distribution)
         users_to_services.append({
             'user': user,
             'event': event
@@ -54,8 +50,8 @@ for event in events:
 # Maching requests to services
 print('\n\n\n')
 print('~~~Transactions~~~')
-header = ['from', 'to', 'amount','name', 'label']
-with open('/home/chrisbele/blockchain/scripts/transactions.csv', 'w', encoding='UTF8', newline='') as f:
+header = ['from', 'to', 'amount','name']
+with open(path+'/scripts/transactions.csv', 'w', encoding='UTF8', newline='') as f:
     writer = csv.writer(f)
     writer.writerow(header)
     transactions = []
@@ -63,7 +59,7 @@ with open('/home/chrisbele/blockchain/scripts/transactions.csv', 'w', encoding='
         for service in users_to_services:
             if request['event']['name'] == service['event']['name']:
                 print(request['user'], 'send to ',service['user'], ' the amount of ',service['event']['price'])
-                row = [request['user'],service['user'],service['event']['price'],service['event']['label']]
+                row = [request['user'],service['user'],service['event']['price']]
                 writer.writerow(row)
                 users_to_requests.remove(request)
                 users_to_services.remove(service)

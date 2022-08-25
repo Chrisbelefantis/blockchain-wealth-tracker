@@ -65,11 +65,9 @@ def drawDistributions(initial,final):
 
 
 def nakamotoIndex(balances):
-
     balances.sort()
     balances = balances[::-1] #Reverting the sort so it starts with larger num
     half_balance = round(sum(balances)/2)
-
     total = 0
     nakamoto_index=1
     for balance in balances:
@@ -78,7 +76,6 @@ def nakamotoIndex(balances):
             break
         else:
             nakamoto_index+=1
-
     return nakamoto_index
 
 
