@@ -9,4 +9,4 @@ compiler:
 networks:
   development:
     cmd_settings:
-      accounts: 100
+      accounts: 500

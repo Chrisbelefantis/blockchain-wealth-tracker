@@ -20,8 +20,8 @@ users_to_services = []
 # Gerenting Requests
 print("~~~ Requests ~~~~")
 for event in events:
-    occurances = distributionController(occurances_of_requests_distribution)
-    print('Ocuurances of',event['name'],': ',occurances)
+    occurances = event['occurances']
+    # print('Ocuurances of',event['name'],': ',occurances)
     for i in range(occurances):
         user = distributionController(requests_to_users_distribution)  
         users_to_requests.append({
@@ -34,11 +34,9 @@ for event in events:
 print('\n\n\n')
 print("~~~ Services ~~~~")
 for event in events:
-    #occurances = pareto(1)*100
-    occurances = distributionController(occurances_of_services_distribution)
+    occurances = event['occurances']
     print('Ocuurances of',event['name'],': ',occurances)
     for i in range(occurances):
-        #user = uniform(0,number_of_users-1)
         user = distributionController(services_to_users_distribution)
         users_to_services.append({
             'user': user,
@@ -55,8 +53,8 @@ with open(path+'/scripts/transactions.csv', 'w', encoding='UTF8', newline='') as
     writer = csv.writer(f)
     writer.writerow(header)
     transactions = []
-    for request in users_to_requests:
-        for service in users_to_services:
+    for request in users_to_requests[:]:
+        for service in users_to_services[:]:
             if request['event']['name'] == service['event']['name']:
                 print(request['user'], 'send to ',service['user'], ' the amount of ',service['event']['price'])
                 row = [request['user'],service['user'],service['event']['price']]
@@ -64,5 +62,4 @@ with open(path+'/scripts/transactions.csv', 'w', encoding='UTF8', newline='') as
                 users_to_requests.remove(request)
                 users_to_services.remove(service)
                 break
-
 
