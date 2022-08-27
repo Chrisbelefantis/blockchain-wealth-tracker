@@ -14,7 +14,7 @@ def printAccounts(token):
 def getAccountBalances(token):
     """Returns an numpy array with the accounts balances in CityCoin"""
     balances = np.ones((len(accounts),1), dtype=np.uint32)
-    for i in range(len(accounts)):
+    for i in range(1,len(accounts)):
         balances[i,0] = token.balanceOf(accounts[i])
 
     return balances[:,0]
@@ -82,9 +82,19 @@ def nakamotoIndex(balances):
 
 def main():
 
+    #Configuration
+    use_rewards = True
+    reward_amount = 1
+    reward_interval = 5
+
+
     #Deploying Token
     cityCoin = CityCoin.deploy({"from":accounts[0]})
     num_of_accounts = len(accounts)
+ 
+    num_of_transactions = [0]*num_of_accounts
+    num_of_rewards_given = 0
+
     
     #Destributing CityCoin to all Accounts
     with open('/home/chrisbele/blockchain/scripts/initial_wealth.csv', 'r') as file:
@@ -112,6 +122,30 @@ def main():
                 amount = int(float(row[2]))
                 cityCoin.approve(accounts[from_user],amount,{'from':accounts[from_user]})
                 cityCoin.transferFrom(accounts[from_user],accounts[to_user],amount,{'from' : accounts[from_user]})
+
+                
+
+
+
+                if use_rewards:
+                    num_of_transactions[from_user]+=1
+                    if(num_of_transactions[from_user]>=reward_interval):
+                        num_of_transactions[from_user]-=reward_interval
+                        cityCoin.approve(accounts[0],reward_amount,{'from':accounts[0]})
+                        cityCoin.transferFrom(accounts[0],accounts[from_user],reward_amount,{'from' : accounts[0]})
+                        num_of_rewards_given+=1
+
+                    num_of_transactions[to_user]+=1
+                    if(num_of_transactions[to_user]>=reward_interval):
+                        num_of_transactions[to_user]-=reward_interval
+                        cityCoin.approve(accounts[0],reward_amount,{'from':accounts[0]})
+                        cityCoin.transferFrom(accounts[0],accounts[to_user],reward_amount,{'from' : accounts[0]})
+                        num_of_rewards_given+=1
+
+                
+
+
+
                 print('Transaction number:',index)
                 print(row)
             except Exception as e:
@@ -142,8 +176,12 @@ def main():
     print("Skewness:", round(stats.skew(balances_end),4))
     print("kurtosis:", round(stats.kurtosis(balances_end),4))
 
+    print('Rewards Given: ',num_of_rewards_given)
+
     print('\n\n')
     #Drawing Lorenz Curves
     drawLorenz(balances_start,balances_end)
     #Drawing distributions 
     drawDistributions(balances_start,balances_end)
+
+

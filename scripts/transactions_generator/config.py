@@ -36,58 +36,60 @@ number_of_users: The number of users of our system
 
 
 path = '/home/chrisbele/blockchain'
-number_of_users = 500
+number_of_users = 100
 
 
 wealth_distribution = {
-    'name': 'Pareto',
-    'min' : 0
+    'name': 'None',
+    'min' : 10
 }
 
 
 requests_to_users_distribution = {
     'name': 'Uniform',
-    'min' : 0,
-    'max' : number_of_users-1,
+    'min' : 1,
+    'max' : number_of_users,
 }
 
 
 services_to_users_distribution = {
-   'name': 'Uniform',
-    'min' : 0,
-    'max' : number_of_users-1,
+   'name': 'Normal',
+    'min' : 1,
+    'max' : number_of_users,
+    'mu': 50 ,
+    'sigma': 10
 }
 
 
 events = [
     {
         'name': 'Empty smart bin',
-        'occurances': 100,
+        'occurances': 10000,
         'price': 1
     },
     {
         'name': 'Declare Parking Space',
-        'occurances': 100,
+        'occurances': 8000,
         'price': 1
     },
     {
         'name': 'Charge bike',
-        'occurances': 100,
+        'occurances': 5000,
         'price': 2
     },
      {
         'name': 'Rent Drone',
-        'occurances': 100,
+        'occurances': 3500,
         'price': 3
     },
     {
        'name': 'Share Energy',
-        'occurances': 100,
+        'occurances': 2000,
         'price': 5
     },
     {
        'name': 'Share Data',
-        'occurances': 100,
+        'occurances': 1000,
         'price': 8
     },
 ]
