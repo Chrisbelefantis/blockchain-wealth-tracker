@@ -3,7 +3,21 @@ The aim of this implementation is to measure wealth distribution on blockchain a
 token and after we generate an initial state for our system and realistic transactions we apply those to our blockchain with Brownie. The final step is to export 
 indexes such the Gini and the Nakamoto index related to the initial and the final wealth distribution of our system.
 
-All configurations are taking place on config.py file and according those the initial wealth distribution and the transactions are generated. From there the execute.py which is a brownie script is responsible for executing thoses transactions on blockchain and exporting the statistics.
+All configurations are taking place on `config.py` file and according those the initial wealth distribution and the transactions are generated. From there the `execute.py` which is a brownie script is responsible for executing thoses transactions on blockchain and exporting the statistics.
+
+
+# How to Run
+
+After you make sure that all depencencies including:
+* Ganache CLI
+* Python3
+* Bronwie
+
+are installed you first need to genereate the new `initial_wealth.csv` and `transactions.csv` according to your configurations and then execute the
+transactions to the blockchain.
+
+1. `python3 transactions.py` 
+2. `brownie run execute.py`
 
 # Architecture of our system
 
