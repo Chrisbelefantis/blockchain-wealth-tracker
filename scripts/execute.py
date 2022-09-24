@@ -83,15 +83,15 @@ def nakamotoIndex(balances):
 def main():
 
     #Configuration
-    use_rewards = True
-    reward_amount = 1
+    use_rewards = False
     reward_interval = 5
+    reward_amount = 1
+ 
 
 
     #Deploying Token
     cityCoin = CityCoin.deploy({"from":accounts[0]})
     num_of_accounts = len(accounts)
- 
     num_of_transactions = [0]*num_of_accounts
     num_of_rewards_given = 0
 
@@ -123,10 +123,7 @@ def main():
                 cityCoin.approve(accounts[from_user],amount,{'from':accounts[from_user]})
                 cityCoin.transferFrom(accounts[from_user],accounts[to_user],amount,{'from' : accounts[from_user]})
 
-                
-
-
-
+                #Reward Logic
                 if use_rewards:
                     num_of_transactions[from_user]+=1
                     if(num_of_transactions[from_user]>=reward_interval):
@@ -134,7 +131,6 @@ def main():
                         cityCoin.approve(accounts[0],reward_amount,{'from':accounts[0]})
                         cityCoin.transferFrom(accounts[0],accounts[from_user],reward_amount,{'from' : accounts[0]})
                         num_of_rewards_given+=1
-
                     num_of_transactions[to_user]+=1
                     if(num_of_transactions[to_user]>=reward_interval):
                         num_of_transactions[to_user]-=reward_interval

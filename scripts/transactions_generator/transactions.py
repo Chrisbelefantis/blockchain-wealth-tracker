@@ -1,21 +1,21 @@
 from config import *
-from utils import *
+from distributions import *
 import csv
 
 
-# print('~~~Distribute Wealth~~~')
-# header = ['user', 'balance']
-# with open(path+'/scripts/initial_wealth.csv', 'w', encoding='UTF8', newline='') as f:
-#     writer = csv.writer(f)
-#     writer.writerow(header)
+print('~~~Distribute Wealth~~~')
+header = ['user', 'balance']
+with open(path+'/scripts/initial_wealth.csv', 'w', encoding='UTF8', newline='') as f:
+    writer = csv.writer(f)
+    writer.writerow(header)
 
-#     #The account 0 is responsible for the rewards.
-#     writer.writerow([0,10000000000])
+    #The account 0 is responsible for the rewards.
+    writer.writerow([0,10000000000])
 
-#     for i in range(1,number_of_users+1):
-#         balance = distributionController(wealth_distribution)
-#         print('User ',i,' with balance ',balance)    
-#         writer.writerow([i,balance])
+    for i in range(1,number_of_users+1):
+        balance = distributionController(wealth_distribution)
+        print('User ',i,' with balance ',balance)    
+        writer.writerow([i,balance])
 
 users_to_requests = []
 users_to_services = []
@@ -30,7 +30,6 @@ for event in events:
             'user': user,
             'event': event
         })
-
 
 # Gerenting services
 print('\n\n\n')

@@ -41,7 +41,7 @@ number_of_users = 100
 
 wealth_distribution = {
     'name': 'None',
-    'min' : 10
+    'min' : 100
 }
 
 
@@ -57,42 +57,40 @@ services_to_users_distribution = {
     'min' : 1,
     'max' : number_of_users,
     'mu': 50 ,
-    'sigma': 10
+    'sigma': 20
 }
+
 
 
 events = [
     {
         'name': 'Empty smart bin',
-        'occurances': 10000,
+        'occurances': 3500,
         'price': 1
     },
     {
         'name': 'Declare Parking Space',
-        'occurances': 8000,
+        'occurances': 3500,
         'price': 1
     },
     {
         'name': 'Charge bike',
-        'occurances': 5000,
+        'occurances': 1500,
         'price': 2
     },
      {
         'name': 'Rent Drone',
-        'occurances': 3500,
+        'occurances': 1000,
         'price': 3
     },
     {
        'name': 'Share Energy',
-        'occurances': 2000,
+        'occurances': 500,
         'price': 5
     },
     {
        'name': 'Share Data',
-        'occurances': 1000,
+        'occurances': 200,
         'price': 8
     },
 ]
-
-
-

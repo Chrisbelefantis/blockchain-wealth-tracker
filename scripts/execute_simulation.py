@@ -50,7 +50,7 @@ def drawLorenz(initial,final):
 
     plt.plot(np.linspace(0.0, 1.0, initial_lorenz_curve.size), initial_lorenz_curve, color='r',label="Initial wealth distribution")
     plt.plot(np.linspace(0.0, 1.0, final_lorenz_curve.size), final_lorenz_curve, color='g',label="Final wealth distribution")
-    plt.plot([0,1], [0,1],label="Even Wealth distribution")
+    #plt.plot([0,1], [0,1],label="Even Wealth distribution")
 
     plt.legend()
     plt.savefig(path)
@@ -86,7 +86,7 @@ num_of_accounts = 101
 accounts = [0]*num_of_accounts
 #Configuration
 use_rewards = False
-reward_amount = 1
+reward_amount = 5
 reward_interval = 10
 
 num_of_accounts = len(accounts)

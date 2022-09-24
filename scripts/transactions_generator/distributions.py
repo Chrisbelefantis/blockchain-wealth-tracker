@@ -6,9 +6,9 @@ def uniform(lower,upper):
     return np.round(np.random.uniform(lower,upper))
 
 
-def pareto():
+def pareto(min):
     """Returns a sample from a Pareto distribution"""
-    return int(np.round(np.random.pareto(1)))
+    return int(np.round((np.random.pareto(1)+1)*min))
 
 
 def truncatedNormal(lower,upper,mu,sigma):
@@ -25,7 +25,7 @@ def distributionController(config):
     """ Gets as an input the configuration of a distribution and returns a sample"""
 
     if config['name'] == 'Pareto':
-        return pareto() + config['min']
+        return pareto(config['min'])
     elif config['name'] == 'Normal':
         return truncatedNormal(config['min'],config['max'],config['mu'],config['sigma'])
     elif config['name'] == 'Uniform':
@@ -34,3 +34,8 @@ def distributionController(config):
         return config['min']
     else:
         print('Not a valid distribution name is given!')
+
+
+
+
+        
